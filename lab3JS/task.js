@@ -11,4 +11,4 @@ function fibonacciNumbers () {
     }while (count <= 10)
 }
 
-console.log(fibonacciNumbers())
+console.log("Числа Фібоначчі", fibonacciNumbers())
