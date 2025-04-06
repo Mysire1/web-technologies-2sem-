@@ -1,34 +1,28 @@
 function task1() {
     let fruits = ['яблуко', 'банан', 'вишня', 'груша'];
     fruits.pop();
-    document.getElementById('task1').innerText += '1.1: ' + fruits.join(', ') + '\n';
+    console.log('1.1:', fruits);
 
     fruits.unshift('ананас');
-    document.getElementById('task1').innerText += '1.2: ' + fruits.join(', ') + '\n';
+    console.log('1.2:', fruits);
 
     fruits.sort().reverse();
-    document.getElementById('task1').innerText += '1.3: ' + fruits.join(', ') + '\n';
+    console.log('1.3:', fruits);
 
-    document.getElementById('task1').innerText += '1.4: Індекс яблука: ' + fruits.indexOf('яблуко') + '\n';
+    console.log('1.4: Індекс яблука:', fruits.indexOf('яблуко'));
 }
 
 function task2() {
     let colors = ['червоний', 'синій', 'зелений', 'жовтий', 'темно-синій'];
-    let longest = colors.reduce(function(a, b) {
-        return a.length > b.length ? a : b;
-    });
-    let shortest = colors.reduce(function(a, b) {
-        return a.length < b.length ? a : b;
-    });
+    let longest = colors.reduce((a, b) => a.length > b.length ? a : b);
+    let shortest = colors.reduce((a, b) => a.length < b.length ? a : b);
 
-    document.getElementById('task2').innerText += '2.1: Довгий: ' + longest + ' Короткий: ' + shortest + '\n';
+    console.log('2.1: Довгий:', longest, 'Короткий:', shortest);
 
-    colors = colors.filter(function(color) {
-        return color.includes('синій');
-    });
+    colors = colors.filter(color => color.includes('синій'));
 
-    document.getElementById('task2').innerText += '2.2: ' + colors.join(', ') + '\n';
-    document.getElementById('task2').innerText += '2.3: ' + colors.join(', ') + '\n';
+    console.log('2.2:', colors);
+    console.log('2.3:', colors);
 }
 
 function task3() {
@@ -38,33 +32,17 @@ function task3() {
         {name: 'Олексій', age: 35, position: 'розробник'}
     ];
 
-    employees.sort(function(a, b) {
-        return a.name.localeCompare(b.name);
-    });
+    employees.sort((a, b) => a.name.localeCompare(b.name));
+    console.log('3.1:', employees);
 
-    document.getElementById('task3').innerText += '3.1: ' + employees.map(function(emp) {
-        return emp.name + ' (' + emp.position + ')';
-    }).join(', ') + '\n';
+    let devs = employees.filter(emp => emp.position === 'розробник');
+    console.log('3.2:', devs);
 
-    document.getElementById('task3').innerText += '3.2: ' + employees.filter(function(emp) {
-        return emp.position === 'розробник';
-    }).map(function(emp) {
-        return emp.name;
-    }).join(', ') + '\n';
-
-    employees = employees.filter(function(emp) {
-        return emp.age !== 35;
-    });
-
-    document.getElementById('task3').innerText += '3.3: ' + employees.map(function(emp) {
-        return emp.name + ' (' + emp.age + ')';
-    }).join(', ') + '\n';
+    employees = employees.filter(emp => emp.age !== 35);
+    console.log('3.3:', employees);
 
     employees.push({name: 'Олег', age: 28, position: 'аналітик'});
-
-    document.getElementById('task3').innerText += '3.4: ' + employees.map(function(emp) {
-        return emp.name + ' (' + emp.position + ')';
-    }).join(', ') + '\n';
+    console.log('3.4:', employees);
 }
 
 function task4() {
@@ -73,82 +51,119 @@ function task4() {
         {name: 'Вадим', age: 19, course: 2},
         {name: 'Костя', age: 24, course: 4}
     ];
-    students = students.filter(function(student) {
-        return student.name !== 'Олексій';
-    });
 
-    document.getElementById('task4').innerText += '4.1: ' + students.map(function(student) {
-        return student.name + ' (курс ' + student.course + ')';
-    }).join(', ') + '\n';
+    students = students.filter(s => s.name !== 'Олексій');
+    console.log('4.1:', students);
 
-    students.push({name: 'Анна', age: 20, course: 1});
+    students.push({name: 'Аня', age: 20, course: 1});
+    console.log('4.2:', students);
 
-    document.getElementById('task4').innerText += '4.2: ' + students.map(function(student) {
-        return student.name + ' (курс ' + student.course + ')';
-    }).join(', ') + '\n';
+    students.sort((a, b) => b.age - a.age);
+    console.log('4.3:', students);
 
-    students.sort(function(a, b) {
-        return b.age - a.age;
-    });
-
-    document.getElementById('task4').innerText += '4.3: ' + students.map(function(student) {
-        return student.name + ' (' + student.age + ')';
-    }).join(', ') + '\n';
-
-    document.getElementById('task4').innerText += '4.4: ' + students.filter(function(student) {
-        return student.course === 3;
-    }).map(function(student) {
-        return student.name;
-    }).join(', ') + '\n';
+    let thirdCourse = students.filter(s => s.course === 3);
+    console.log('4.4:', thirdCourse);
 }
 
 function task5() {
     let numbers = [1, 2, 3, 4, 5];
 
-    document.getElementById('task5').innerText += '5.1: ' + numbers.map(function(num) {
-        return num ** 2;
-    }).join(', ') + '\n';
+    let squares = numbers.map(num => num ** 2);
+    console.log('5.1:', squares);
 
-    document.getElementById('task5').innerText += '5.2: ' + numbers.filter(function(num) {
-        return num % 2 === 0;
-    }).join(', ') + '\n';
+    let evens = numbers.filter(num => num % 2 === 0);
+    console.log('5.2:', evens);
 
-    document.getElementById('task5').innerText += '5.3: Сума: ' + numbers.reduce(function(sum, num) {
-        return sum + num;
-    }, 0) + '\n';
+    let sum = numbers.reduce((sum, num) => sum + num, 0);
+    console.log('5.3: Сума:', sum);
 
     numbers = [...[10, 11, 12, 13, 14], ...numbers];
-
-    document.getElementById('task5').innerText += '5.4: ' + numbers.join(', ') + '\n';
+    console.log('5.4:', numbers);
 
     numbers.splice(0, 3);
-
-    document.getElementById('task5').innerText += '5.5: ' + numbers.join(', ') + '\n';
+    console.log('5.5:', numbers);
 }
 
-function task6() {
+function libraryManagement() {
     let library = [
         {title: 'Книга1', author: 'Автор1', genre: 'Фантастика', pages: 300, isAvailable: true},
-        {title: 'Книга2', author: 'Автор2', genre: 'Детектив', pages: 250, isAvailable: false}
+        {title: 'Книга2', author: 'Автор2', genre: 'Детектив', pages: 250, isAvailable: false},
+        {title: 'Книга3', author: 'Автор1', genre: 'Роман', pages: 200, isAvailable: true}
     ];
 
-    document.getElementById('task6').innerText += '6: Всього книг: ' + library.length + ', доступних: ' + library.filter(function(book) {
-        return book.isAvailable;
-    }).length + '\n';
+    function addBook(title, author, genre, pages) {
+        library.push({title, author, genre, pages, isAvailable: true});
+    }
+
+    function removeBook(title) {
+        library = library.filter(book => book.title !== title);
+    }
+
+    function findBooksByAuthor(author) {
+        return library.filter(book => book.author === author);
+    }
+
+    function toggleBookAvailability(title, isBorrowed) {
+        const book = library.find(book => book.title === title);
+        if (book) {
+            book.isAvailable = !isBorrowed;
+        }
+    }
+
+    function sortBooksByPages() {
+        library.sort((a, b) => a.pages - b.pages);
+    }
+
+    function getBooksStatistics() {
+        const total = library.length;
+        const available = library.filter(book => book.isAvailable).length;
+        const borrowed = total - available;
+        const avgPages = total === 0 ? 0 : (library.reduce((sum, book) => sum + book.pages, 0) / total).toFixed(2);
+
+        return {
+            totalBooks: total,
+            availableBooks: available,
+            borrowedBooks: borrowed,
+            averagePages: Number(avgPages)
+        };
+    }
+
+    console.log("6.1 Бібліотека:", library);
+
+    addBook('Книга4', 'Автор3', 'Фентезі', 400);
+    console.log("6.2 Нова бібліотека:", library);
+
+    removeBook('Книга2');
+    console.log("6.3 Видалено.Оновленна Бібліотека:", library);
+
+    console.log("6.4 Книги автора:", findBooksByAuthor('Автор1'));
+
+    toggleBookAvailability('Книга1', true);
+    console.log("6.5 Статус книги:", library.find(b => b.title === 'Книга1'));
+
+    sortBooksByPages();
+    console.log("6.6 Сортування за сторінками:", library);
+
+    console.log("6.7 Статистика:", getBooksStatistics());
 }
 
 function task7() {
-    let student = { name: 'Костя', age: 21, course: 2 };
-    student.subjects = ['Математика', 'Фізика', 'Програмування'];
+    let student = {
+        name: 'Костя',
+        age: 21,
+        course: 2,
+        subjects: ['Математика', 'Фізика', 'Програмування']
+    };
+
     delete student.age;
 
-    document.getElementById('task7').innerText += '7: ' + student.name + ', предмети: ' + student.subjects.join(', ') + '\n';
+    console.log('7:', student);
 }
 
-task1();
-task2();
-task3();
-task4();
-task5();
-task6();
-task7();
+task1()
+task2()
+task3()
+task4()
+task5()
+libraryManagement()
+task7()
