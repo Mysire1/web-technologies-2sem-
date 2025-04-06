@@ -13,9 +13,7 @@ function arrMaxMin (array) {
         }
     }
 
-    return {min,max};
+    return `Min: ${min}, Max: ${max}`;
 }
 
-const result = arrMaxMin(array);
-console.log("Max =" + result.max);
-console.log("Min =" + result.min);
+console.log(arrMaxMin(array))
