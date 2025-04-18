@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+<header>
+    <h1>Список завдань</h1>
+    <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="Нове завдання" required>
+        <button type="submit">Додати</button>
+    </form>
+    <div>
+        <button onclick="sortTasks('created')">Сортувати за датою</button>
+        <button onclick="sortTasks('status')">Сортувати за станом</button>
+        <button onclick="sortTasks('updated')">Сортувати за оновленням</button>
+    </div>
+</header>
+<main>
+    <ul id="todo-list"></ul>
+</main>
+<script src="task2.js"></script>
+</body>
+</html>
