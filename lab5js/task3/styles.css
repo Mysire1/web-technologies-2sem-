@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+div {
+    margin: 20px 0;
+}
+
+#digitalClock {
+    font-size: 48px;
+    font-weight: bold;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#countdownDisplay, #birthdayDisplay {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
