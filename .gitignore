@@ -11,7 +11,7 @@ _arc/
 *.sublime-*
 *.rar
 *.zip
-.idea
+.idea/
 ex_files
 Thumbs.db
 *:Zone.Identifier
