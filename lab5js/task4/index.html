@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Інтернет-магазин</h1>
+
+    <div id="add-product-form">
+        <h2>Додати продукт</h2>
+        <input type="text" id="product-name" placeholder="Назва продукту">
+        <input type="number" id="product-price" placeholder="Ціна">
+        <input type="number" id="product-quantity" placeholder="Кількість">
+        <button id="add-product">Додати продукт</button>
+    </div>
+
+    <div id="place-order-form">
+        <h2>Оформити замовлення</h2>
+        <input type="text" id="order-product-id" placeholder="Ідентифікатор продукту">
+        <input type="number" id="order-quantity" placeholder="Кількість">
+        <button id="place-order">Зробити замовлення</button>
+    </div>
+
+    <div id="search-product-form">
+        <h2>Пошук продукту</h2>
+        <input type="text" id="search-product" placeholder="Назва продукту">
+        <button id="search-product-button">Пошук</button>
+    </div>
+
+    <div id="product-list-container">
+        <h2>Продукти</h2>
+        <ul id="product-list"></ul>
+    </div>
+
+    <div id="order-list-container">
+        <h2>Замовлення</h2>
+        <ul id="order-list"></ul>
+    </div>
+</div>
+
+<script src="task4.js"></script>
+</body>
+</html>
