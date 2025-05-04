@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             task.text = text.textContent.trim();
             task.updated = new Date();
+            renderTasks();
         });
         text.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
@@ -31,12 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const info = document.createElement('small');
         info.innerHTML = `
-      Статус: ${task.completed ? 'Виконано' : 'Не виконано'} <br>
-      Додано: ${task.created.toLocaleString()}
-    `;
+            Статус: ${task.completed ? 'Виконано' : 'Не виконано'} <br>
+            Додано: ${task.created.toLocaleString()} <br>
+            Оновлено: ${task.updated.toLocaleString()}
+        `;
 
         const delBtn = document.createElement('button');
         delBtn.textContent = 'Видалити';
+        delBtn.classList.add('delete-btn');
         delBtn.onclick = () => {
             tasks.splice(index, 1);
             renderTasks();
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    window.sortTasks = (type) => {
+    const sortTasks = (type) => {
         if (type === 'created') {
             tasks.sort((a, b) => a.created - b.created);
         } else if (type === 'status') {
@@ -92,4 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         renderTasks();
     };
+
+    document.getElementById('sort-by-created').addEventListener('click', () => sortTasks('created'));
+    document.getElementById('sort-by-status').addEventListener('click', () => sortTasks('status'));
+    document.getElementById('sort-by-updated').addEventListener('click', () => sortTasks('updated'));
 });

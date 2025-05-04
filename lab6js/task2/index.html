@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список завдань</title>
     <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
@@ -13,9 +14,9 @@
         <button type="submit">Додати</button>
     </form>
     <div>
-        <button onclick="sortTasks('created')">Сортувати за датою</button>
-        <button onclick="sortTasks('status')">Сортувати за станом</button>
-        <button onclick="sortTasks('updated')">Сортувати за оновленням</button>
+        <button id="sort-by-created">Сортувати за датою додавання</button>
+        <button id="sort-by-status">Сортувати за станом</button>
+        <button id="sort-by-updated">Сортувати за датою оновлення</button>
     </div>
 </header>
 <main>

@@ -143,4 +143,16 @@ function sortArray(arr, key) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', renderProducts);
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    document.getElementById('filter-all').addEventListener('click', () => filterCategory('all'));
+    document.getElementById('filter-electronics').addEventListener('click', () => filterCategory('Електроніка'));
+    document.getElementById('filter-clothing').addEventListener('click', () => filterCategory('Одяг'));
+    document.getElementById('filter-food').addEventListener('click', () => filterCategory('Продукти'));
+    document.getElementById('reset-filter').addEventListener('click', resetFilters);
+
+    document.getElementById('sort-price').addEventListener('click', () => sortProducts('price'));
+    document.getElementById('sort-date-created').addEventListener('click', () => sortProducts('createdAt'));
+    document.getElementById('sort-date-updated').addEventListener('click', () => sortProducts('updatedAt'));
+    document.getElementById('reset-sort').addEventListener('click', resetSort);
+});
