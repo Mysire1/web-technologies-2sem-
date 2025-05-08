@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації та авторизації</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="tabs">
+        <button class="tab-button active" data-tab="login">Авторизація</button>
+        <button class="tab-button" data-tab="register">Реєстрація</button>
+    </div>
+
+    <div id="login" class="tab-content active">
+        <h2>Авторизація</h2>
+        <form id="loginForm" novalidate>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Ваш username" required>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group password-wrapper">
+                <label for="loginPassword">Пароль</label>
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Ваш пароль" required>
+                <span class="toggle-password" data-input="loginPassword">&#128065;</span>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Запам'ятати мене</label>
+            </div>
+            <button type="submit">Вхід</button>
+        </form>
+        <div class="form-message-container" id="loginMessageContainer"></div>
+    </div>
+
+    <div id="register" class="tab-content">
+        <h2>Реєстрація</h2>
+        <form id="registerForm" novalidate>
+            <div class="form-group">
+                <label for="firstName">Ім'я</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Ваше ім'я" required>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Прізвище</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Ваше прізвище" required>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group password-wrapper">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Мінімум 6 символів" required>
+                <span class="toggle-password" data-input="password">&#128065;</span>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group password-wrapper">
+                <label for="confirmPassword">Підтвердження пароля</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторіть пароль" required>
+                <span class="toggle-password" data-input="confirmPassword">&#128065;</span>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+380xxxxxxxxx" required>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Дата народження</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <label>Стать:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="sex" value="male" required>
+                    <label for="male">Чоловік</label>
+                    <input type="radio" id="female" name="sex" value="female" required>
+                    <label for="female">Жінка</label>
+                </div>
+                <small class="error-text" id="sexError"></small>
+            </div>
+            <div class="form-group">
+                <label for="country">Країна</label>
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Оберіть країну</option>
+                    <option value="Ukraine">Україна</option>
+                    <option value="Poland">Польща</option>
+                    <option value="Germany">Німеччина</option>
+                </select>
+                <small class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <label for="city">Місто</label>
+                <select id="city" name="city" disabled required>
+                    <option value="" disabled selected>Спочатку оберіть країну</option>
+                </select>
+                <small class="error-text"></small>
+            </div>
+            <button type="submit">Зареєструватися</button>
+        </form>
+        <div class="form-message-container" id="registerMessageContainer"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
